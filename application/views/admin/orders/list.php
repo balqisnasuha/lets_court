@@ -12,7 +12,7 @@
         <?php endif ?>
         <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
-                <h2>All Orders</h2>
+                <h2>All Booking</h2>
             </div>
             <input class="form-control mb-3" id="myInput" type="text" placeholder="Search .." style="width:50%;">
         </div>
@@ -22,8 +22,8 @@
                 <thead>
                     <tr>
                         <th>Username</th>
-                        <th>Item</th>
-                        <th>Qty</th>
+                        <th>Court</th>
+                        <th>Hours</th>
                         <th>Price</th>
                         <th>Address</th>
                         <th>Status</th>
@@ -38,7 +38,7 @@
                         <td><?php echo $order['username']; ?></td>
                         <td><?php echo $order['d_name']; ?></td>
                         <td><?php echo $order['quantity']; ?></td>
-                        <td><?php echo "$".$order['price']; ?></td>
+                        <td><?php echo "RM".$order['price']; ?></td>
                         <td><?php echo $order['address']; ?></td>
 
 
@@ -49,9 +49,9 @@
                         <td> <button type="button" class="btn btn-warning"><span class="fa fa-cog fa-spin"
                                     aria-hidden="true"></span> On the way!</button></td>
                         <?php } if($status=="closed") { ?>
-                        <td> <button type="button" class="btn btn-success"><span class="fa fa-check-circle"aria-hidden="true"></span> Delivered</button>
+                        <td> <button type="button" class="btn btn-success"><span class="fa fa-check-circle"aria-hidden="true"></span> Accepted</button>
                         </td> <?php } ?> <?php if($status=="rejected") { ?>
-                        <td> <button type="button" class="btn btn-danger"><i class="far fa-times-circle"></i> Cancelled</button>
+                        <td> <button type="button" class="btn btn-danger"><i class="far fa-times-circle"></i> Rejected </button>
                         </td>
                         <?php } ?>
                         <td><?php echo $order['date']; ?></td>

@@ -29,7 +29,7 @@
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <h4 class="card-title"><?php echo $ctype['name']; ?></h4>
-                        <h4 class="text-muted"><b>$<?php echo $ctype['price']; ?></b></h4>
+                        <h4 class="text-muted"><b>RM<?php echo $ctype['price']; ?></b></h4>
                     </div>
                     <p class="card-text"><?php echo $ctype['about']; ?></p>
                     <a href="<?php echo base_url().'Ctype/addToCart/'.$ctype['d_id']; ?>" class="btn btn-primary"><i

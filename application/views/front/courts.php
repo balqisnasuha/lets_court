@@ -16,13 +16,13 @@
                 <img class="card-img-top" src="<?php echo base_url().'public/uploads/court/thumb/'.$image; ?>">
                 <div class="card-body">
                     <h4 class="card-title"><?php echo $courtmin['name']; ?></h4>
-                    <!-- <p class="card-text mb-0"><?php echo $courtmin['c_name']." Court"; ?></p>
+                    <p class="card-text mb-0"><?php echo $courtmin['c_name']." Court"; ?></p>
                     <p class="card-text mb-0"><?php echo $courtmin['address']; ?></p>
                     <hr>
                     <p class="card-text mb-0"></p>
                     <p class="card-text mb-0">OPENING HOURS</p>
                     <p class="card-text mb-0"><?php echo $courtmin['o_days']; ?></p>
-                    <p class="card-text"><?php echo $courtmin['o_hr']; ?> - <?php echo $courtmin['c_hr']; ?></p> -->
+                    <p class="card-text"><?php echo $courtmin['o_hr']; ?> - <?php echo $courtmin['c_hr']; ?></p>
                     <hr>
                     <a href="<?php echo base_url().'ctype/list/'.$courtmin['r_id']; ?>" class="btn btn-primary">Book</a>
                 </div>

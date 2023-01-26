@@ -24,7 +24,7 @@
                         <th>Name</th>
                         <th>Email</th>
                         <th>Contact</th>
-                        <th>Website</th>
+                        <th>Office number</th>
                         <th>Open Hrs</th>
                         <th>Close Hrs</th>
                         <th>Open Days</th>

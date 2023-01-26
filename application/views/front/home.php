@@ -37,7 +37,7 @@
 <div class="container-fluid padding">
     <div class="row text-center welcome">
         <div class="col-12">
-            <h1 class="display-4">Easy 3 Steps To Follow</h1>
+            <h1 class="display-4">About us</h1>
         </div>
         <hr>
         <div class="col-12">

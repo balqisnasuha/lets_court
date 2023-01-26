@@ -1,40 +1,36 @@
 <div class="container table-responsive m-t-20">
-    <h2 class="py-3 text-center">View User's Order</h2>
+    <h2 class="py-3 text-center">View user's booking</h2>
     <table id="myTable" class="table table-bordered table-hover table-striped dataTable">
         <tbody>
             <tr>
-                <td><strong>Ordered By:</strong></td>
+                <td><strong>Booked by :</strong></td>
                 <td><?php echo $order['username'] ?></td>
             </tr>
             <tr>
-                <td><strong>Food Item:</strong></td>
+                <td><strong>Court:</strong></td>
                 <td><?php echo $order['d_name'] ?></td>
             </tr>
             <tr>
-                <td><strong>Quantity:</strong></td>
+                <td><strong>Hours:</strong></td>
                 <td><?php echo $order['quantity'] ?></td>
             </tr>
             <tr>
                 <td><strong>Price:</strong></td>
-                <td><?php echo "$".$order['price'] ?></td>
+                <td><?php echo "RM".$order['price'] ?></td>
             </tr>
             <tr>
-                <td><strong>Address:</strong></td>
-                <td><?php echo $order['address'] ?></td>
-            </tr>
-            <tr>
-                <td><strong>Order Date:</strong></td>
+                <td><strong>Booking made on:</strong></td>
                 <td><?php echo $order['date'] ?></td>
             </tr>
             <form method="post" action="<?php echo base_url().'admin/orders/updateOrder/'.$order['o_id']; ?>">
                 <tr>
-                    <td><strong>Select Order Status:</strong></td>
+                    <td><strong>Select Booking Status:</strong></td>
                     <td>
                         <select class="form-control" name="status"
                             class="<?php echo (form_error('status') != "") ? 'is-invalid' : '';?>">
                             <option>Select Status</option>
-                            <option value="in process">In Process</option>
-                            <option value="closed">Closed/Delivered</option>
+                            <option value="in process">To Be Determined</option>
+                            <option value="closed">Accepted</option>
                             <option value="rejected">Rejected</option>
                         </select>
                         <?php echo form_error('status');?>

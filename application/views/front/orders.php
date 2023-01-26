@@ -10,7 +10,7 @@
     </div>
     <?php endif ?>
     <div class="container shadow-container">
-        <h2 class="text-center">Recent Orders</h2>
+        <h2 class="text-center">Recent Booking</h2>
         <div class="table-responsive-sm">
             <table class="table table-bordered table-hover table-striped">
                 <thead>
@@ -19,7 +19,7 @@
                         <th>Hours</th>
                         <th>Price</th>
                         <th>Status</th>
-                        <th>Order Date</th>
+                        <th>Book Date</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -31,7 +31,7 @@
                     <tr>
                         <td><?php echo $order['d_name']; ?></td>
                         <td><?php echo $order['quantity']; ?></td>
-                        <td><?php echo '$'.$order['price']; ?></td>
+                        <td><?php echo 'RM'.$order['price']; ?></td>
                         <?php if($status=="" or $status=="NULL") { ?>
                         <td> <button type="button" class="btn btn-secondary" style="font-weight:bold;"><i class="fas fa-bars"></i> To be determined </button></td>
                         <?php } if($status=="in process") { ?>

@@ -31,10 +31,10 @@
                     <span></span>
                 </div>
                 <div class="form-group">
-                    <label class="control-label">Website URL</label>
+                    <label class="control-label">Office number</label>
                     <input type="text" name="url" id="url" class="form-control form-control-danger
                     <?php echo (form_error('url') != "") ? 'is-invalid' : '';?>"
-                        placeholder=" http://example.com" value="<?php echo set_value('url');?>">
+                        placeholder="room xxx" value="<?php echo set_value('url');?>">
                         <?php echo form_error('url'); ?>
                     <span></span>
                 </div>
@@ -99,9 +99,9 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label">Select Category</label>
+            <label class="control-label">Court type</label>
             <select name="c_name" id="c_name" class="form-control <?php echo (form_error('c_name') != "") ? 'is-invalid' : '';?>">
-                <option value="">--Select Category--</option>
+                <option value="">~Court type~</option>
                 <?php 
                 if (!empty($cats)) { 
                     foreach($cats as $cat) {

@@ -6,8 +6,8 @@ class Court extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('Courtmin_model');
-		$courtmin= $this->Courtmin_model->getResInfo();
-		$data['courtmin'] = $courtmin;
+		$courtmins= $this->Courtmin_model->getResInfo();
+		$data['courtmins'] = $courtmins;
 		$this->load->view('front/partials/header');
 		$this->load->view('front/court',$data);
 		$this->load->view('front/partials/footer');

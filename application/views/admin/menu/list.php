@@ -12,7 +12,7 @@
         <?php endif ?>
         <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
-                <h2>All Menu Details</h2>
+                <h2>Court Details</h2>
             </div>
             <input class="form-control mb-3" id="myInput" type="text" placeholder="Search .." style="width:50%;">
         </div>
@@ -34,7 +34,7 @@
                         <td><?php echo $ctype['r_id']; ?></td>
                         <td><?php echo $ctype['name']; ?></td>
                         <td><?php echo $ctype['about']; ?></td>
-                        <td><?php echo "$".$ctype['price']; ?></td>
+                        <td><?php echo "RM".$ctype['price']; ?></td>
                         <td>
                             <a href="<?php echo base_url().'admin/menu/edit/'.$ctype['d_id']; ?>"
                                 class="btn btn-info mb-1"><i
