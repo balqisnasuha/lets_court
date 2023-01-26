@@ -65,8 +65,8 @@
         </div>
     </div>
     <hr class="my-4">
-</div> -->
-<!-- <div class="container-fluid padding">
+</div>
+<div class="container-fluid padding">
     <div class="row welcome text-center welcome">
         <div class="col-12">
             <h1 class="display-4">Popular Dishes</h1>
@@ -102,7 +102,7 @@
         <?php } ?>
     </div>
     <hr class="my-4">
-</div>-->
+</div>
 <div class="container-fluid padding">
     <div class="row text-center padding">
         <div class="col-12">
