@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="<?php echo base_url().'assets/css/bootstrap.min.css';?>">
-    <script src="<?php echo base_url().'assets/js/jquery-3.6.0.min.js';?>"></script>
-    <script src="<?php echo base_url().'assets/js/bootstrap.min.js';?>"></script>
+    <link rel="stylesheet" href="<?php echo base_url() . 'assets/css/bootstrap.min.css'; ?>">
+    <script src="<?php echo base_url() . 'assets/js/jquery-3.6.0.min.js'; ?>"></script>
+    <script src="<?php echo base_url() . 'assets/js/bootstrap.min.js'; ?>"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-    <link rel="stylesheet" href="<?php echo base_url('/assets/css/dashboard.css');?>">
+    <link rel="stylesheet" href="<?php echo base_url('/assets/css/dashboard.css'); ?>">
 </head>
 
 <body class="bg-white">
@@ -17,7 +17,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top mb-3">
         <div class="container-fluid">
-            <a class="navbar-brand" href="<?php echo base_url().'admin/home';?>">Admin Panel</a>
+            <a class="navbar-brand" href="<?php echo base_url() . 'admin/home'; ?>">Admin Panel</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarRes">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -30,8 +30,8 @@
                             User
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="<?php echo base_url().'admin/user/';?>">Manage User</a>
-                            <a class="dropdown-item" href="<?php echo base_url().'admin/user/create_user';?>">Create
+                            <a class="dropdown-item" href="<?php echo base_url() . 'admin/user/'; ?>">Manage User</a>
+                            <a class="dropdown-item" href="<?php echo base_url() . 'admin/user/create_user'; ?>">Create
                                 User</a>
                         </div>
                     </li>
@@ -41,21 +41,34 @@
                             Courtmin
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="<?php echo base_url().'admin/courtmin/';?>">Manage Courtmin</a>
+                            <a class="dropdown-item" href="<?php echo base_url() . 'admin/courtmin/'; ?>">Manage
+                                Courtmin</a>
                             <a class="dropdown-item"
-                                href="<?php echo base_url().'admin/courtmin/create_court';?>">Create Courtmin</a>
+                                href="<?php echo base_url() . 'admin/courtmin/create_court'; ?>">Create Courtmin</a>
                         </div>
                     </li>
+                    <!--  -->
+                    <li class="nav-item dropdown active ">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Feedback
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="<?php echo base_url() . 'admin/feedback/'; ?>">See
+                                Feedback</a>
+                        </div>
+                    </li>
+                    <!--  -->
                     <li class="nav-item dropdown active">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Category
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="<?php echo base_url().'admin/category/';?>">Manage
+                            <a class="dropdown-item" href="<?php echo base_url() . 'admin/category/'; ?>">Manage
                                 Categories</a>
                             <a class="dropdown-item"
-                                href="<?php echo base_url().'admin/category/create_category';?>">Create
+                                href="<?php echo base_url() . 'admin/category/create_category'; ?>">Create
                                 Category</a>
                         </div>
                     </li>
@@ -65,8 +78,8 @@
                             Menu
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="<?php echo base_url().'admin/menu/';?>">Manage Menu</a>
-                            <a class="dropdown-item" href="<?php echo base_url().'admin/menu/create_menu';?>">Create
+                            <a class="dropdown-item" href="<?php echo base_url() . 'admin/menu/'; ?>">Manage Menu</a>
+                            <a class="dropdown-item" href="<?php echo base_url() . 'admin/menu/create_menu'; ?>">Create
                                 Menu</a>
                         </div>
                     </li>
@@ -76,24 +89,24 @@
                             Orders
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="<?php echo base_url().'admin/orders/';?>"><i class="fas fa-shopping-basket"></i> All Orders</a>
+                            <a class="dropdown-item" href="<?php echo base_url() . 'admin/orders/'; ?>"><i
+                                    class="fas fa-shopping-basket"></i> All Orders</a>
                         </div>
                     </li>
                     <li class="nav-item active">
-                        <a href="<?php echo base_url().'admin/login/logout';?>"
-                            class="nav-link">Logout </a>
+                        <a href="<?php echo base_url() . 'admin/login/logout'; ?>" class="nav-link">Logout </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
     <script>
-    $(document).ready(function() {
-        $(".dropdown").hover(function() {
-            var dropdownMenu = $(this).children(".dropdown-menu");
-            if (dropdownMenu.is(":visible")) {
-                dropdownMenu.parent().toggleClass("open");
-            }
+        $(document).ready(function () {
+            $(".dropdown").hover(function () {
+                var dropdownMenu = $(this).children(".dropdown-menu");
+                if (dropdownMenu.is(":visible")) {
+                    dropdownMenu.parent().toggleClass("open");
+                }
+            });
         });
-    });
     </script>
