@@ -1,16 +1,16 @@
 <div class="conatiner">
-    <form action="<?php echo base_url().'admin/store/create_restaurant';?>" method="POST"
+    <form action="<?php echo base_url().'admin/courtmin/create_court';?>" method="POST"
         class="form-container mx-auto  shadow-container" id="myForm" style="width:90%" enctype="multipart/form-data">
-        <h3 class="mb-3 p-2 text-center mb-3">Add New Restaurant Details</h3>
+        <h3 class="mb-3 p-2 text-center mb-3">Add New Court Details</h3>
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label class="control-label">Restaurant Name</label>
-                    <input type="text" name="res_name" id="rname" class="form-control
-                    <?php echo (form_error('res_name') != "") ? 'is-invalid' : '';?>" placeholder="Add Restaurant Name"
-                    value="<?php echo set_value('res_name');?>">
+                    <label class="control-label">Court Name</label>
+                    <input type="text" name="court_name" id="rname" class="form-control
+                    <?php echo (form_error('court_name') != "") ? 'is-invalid' : '';?>" placeholder="Add Court Name"
+                    value="<?php echo set_value('court_name');?>">
 
-                    <?php echo form_error('res_name'); ?>
+                    <?php echo form_error('court_name'); ?>
                     <span></span>
                 </div>
                 <div class="form-group">
@@ -127,7 +127,7 @@
         </div>
         <div class="form-actions">
             <input type="submit" id="btn" name="submit" class="btn btn-success" value="Save">
-            <a href="<?php echo base_url().'admin/store/index'?>" class="btn btn-secondary">Cancel</a>
+            <a href="<?php echo base_url().'admin/courtmin/index'?>" class="btn btn-secondary">Cancel</a>
         </div>
     </form>
 </div>

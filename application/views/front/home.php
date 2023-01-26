@@ -10,8 +10,8 @@
             <div class="carousel-caption text-left">
                 <h1 class="display-2">LET'S COURT</h1>
                 <h3>Book Azman Hashim's Court with us!</h3>
-                <a href="<?php echo base_url().'restaurant/index'?>" class="btn btn-outline-light btn-lg">Order Now</a>
-                <a href="<?php echo base_url().'restaurant/index'?>" class="btn btn-primary btn-lg">View Menu</a>
+                <a href="<?php echo base_url().'court/index'?>" class="btn btn-outline-light btn-lg">Order Now</a>
+                <a href="<?php echo base_url().'court/index'?>" class="btn btn-primary btn-lg">View Menu</a>
             </div>
         </div>
         <div class="carousel-item">
@@ -19,8 +19,8 @@
             <div class="carousel-caption text-right">
                 <h1 class="display-2">LET'S COURT</h1>
                 <h3>Book Azman Hashim's Court with us!</h3>
-                <a href="<?php echo base_url().'restaurant/index'?>" class="btn btn-outline-light btn-lg">Order Now</a>
-                <a href="<?php echo base_url().'restaurant/index'?>" class="btn btn-primary btn-lg">View Menu</a>
+                <a href="<?php echo base_url().'court/index'?>" class="btn btn-outline-light btn-lg">Order Now</a>
+                <a href="<?php echo base_url().'court/index'?>" class="btn btn-primary btn-lg">View Menu</a>
             </div>
         </div>
         <div class="carousel-item">
@@ -28,8 +28,8 @@
             <div class="carousel-caption text-right">
                 <h1 class="display-2">LET'S COURT</h1>
                 <h3>Book Azman Hashim's Court with us!</h3>
-                <a href="<?php echo base_url().'restaurant/index'?>" class="btn btn-outline-light btn-lg">Order Now</a>
-                <a href="<?php echo base_url().'restaurant/index'?>" class="btn btn-primary btn-lg">View Menu</a>
+                <a href="<?php echo base_url().'court/index'?>" class="btn btn-outline-light btn-lg">Book Now</a>
+                <a href="<?php echo base_url().'court/index'?>" class="btn btn-primary btn-lg">View Court</a>
             </div>
         </div>
     </div>
@@ -46,17 +46,17 @@
         </div>
     </div>
 </div>
-<div class="container-fluid padding">
+<!-- <div class="container-fluid padding">
     <div class="row text-center padding">
         <div class="col-xs-12 col-sm-6 col-md-4">
             <i class="fas fa-utensils"></i>
-            <h3>Choose A Restaurant</h3>
+            <h3>Choose A Court</h3>
             <p>First thing you can do is choose from our restautant partners easily!</p>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4">
             <i class="fas fa-bullseye"></i>
             <h3>Choose A Tasty Dish</h3>
-            <p>We've got you covered with menus from over various delivery restaurants online!</p>
+            <p>We've got you covered with menus from over various delivery courts online!</p>
         </div>
         <div class="col-sm-12 col-md-4">
         <i class="fas fa-clipboard-check"></i>
@@ -66,15 +66,15 @@
     </div>
     <hr class="my-4">
 </div>
-<!-- <div class="container-fluid padding">
+<div class="container-fluid padding">
     <div class="row welcome text-center welcome">
         <div class="col-12">
             <h1 class="display-4">Popular Dishes</h1>
         </div>
         <hr>
     </div>
-</div>
-<div class="container-fluid padding dish-card">
+</div> -->
+<!-- <div class="container-fluid padding dish-card">
     <div class="row">
         <?php if(!empty($dishesh)) { ?>
         <?php foreach($dishesh as $dish) { ?>
@@ -102,7 +102,7 @@
         <?php } ?>
     </div>
     <hr class="my-4">
-</div> -->
+</div>
 <div class="container-fluid padding">
     <div class="row text-center padding">
         <div class="col-12">
@@ -116,7 +116,7 @@
             <a href=""><i class="fab fa-youtube"></i></a>
         </div>
     </div>
-</div>
+</div> 
 <hr class="my-4">
 <section id="contact-us" class="container shadow my-4 p-4">
     <!--Section heading-->

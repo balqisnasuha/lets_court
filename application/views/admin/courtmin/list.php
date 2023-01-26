@@ -11,7 +11,7 @@
     <?php endif ?>
     <div class="row">
         <div class="col-md-6">
-            <h4>Available Restaurant/s</h4>
+            <h4>Available Court/s</h4>
         </div>
         <div class="col-md-6 text-right">
             <input class="form-control mb-3" id="myInput" type="text" placeholder="Search .." style="width:50%;">
@@ -33,23 +33,23 @@
                     </tr>
                 </thead>
                 <tbody id="myTable">
-                    <?php if(!empty($stores)) { ?>
-                    <?php foreach($stores as $store) { ?>
+                    <?php if(!empty($courtmins)) { ?>
+                    <?php foreach($courtmins as $courtmin) { ?>
                     <tr>
-                        <td><?php echo $store['r_id']; ?></td>
-                        <td><?php echo $store['name']; ?></td>
-                        <td><?php echo $store['email']; ?></td>
-                        <td><?php echo $store['phone']; ?></td>
-                        <td><?php echo $store['url']; ?></td>
-                        <td><?php echo $store['o_hr']; ?></td>
-                        <td><?php echo $store['c_hr']; ?></td>
-                        <td><?php echo $store['o_days']; ?></td>
-                        <td><?php echo $store['address']; ?></td>
+                        <td><?php echo $courtmin['r_id']; ?></td>
+                        <td><?php echo $courtmin['name']; ?></td>
+                        <td><?php echo $courtmin['email']; ?></td>
+                        <td><?php echo $courtmin['phone']; ?></td>
+                        <td><?php echo $courtmin['url']; ?></td>
+                        <td><?php echo $courtmin['o_hr']; ?></td>
+                        <td><?php echo $courtmin['c_hr']; ?></td>
+                        <td><?php echo $courtmin['o_days']; ?></td>
+                        <td><?php echo $courtmin['address']; ?></td>
                         <td>
-                            <a href="<?php echo base_url().'admin/store/edit/'.$store['r_id']?>"
+                            <a href="<?php echo base_url().'admin/courtmin/edit/'.$courtmin['r_id']?>"
                                 class="btn btn-info mb-1"><i class="fas fa-edit mr-1"></i>Edit</a>
 
-                            <a href="javascript:void(0);" onclick="deleteStore(<?php echo $store['r_id']; ?>)"
+                            <a href="javascript:void(0);" onclick="deleteCourtmin(<?php echo $courtmin['r_id']; ?>)"
                                 class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete</a>
                         </td>
                         <!-- <center>
@@ -71,9 +71,9 @@
 </div>
 
 <script type="text/javascript">
-function deleteStore(id) {
-    if (confirm("Are you sure you want to delete store?")) {
-        window.location.href = '<?php echo base_url().'admin/store/delete/';?>' + id;
+function deleteCourtmin(id) {
+    if (confirm("Are you sure you want to delete courtmin?")) {
+        window.location.href = '<?php echo base_url().'admin/courtmin/delete/';?>' + id;
     }
 }
 $(document).ready(function() {

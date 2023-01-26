@@ -13,8 +13,8 @@ class Dish extends CI_Controller {
         $this->load->model('Menu_model');
         $dishesh = $this->Menu_model->getDishesh($id);
 
-        $this->load->model('Store_model');
-        $res = $this->Store_model->getStore($id);
+        $this->load->model('Courtmin_model');
+        $res = $this->Courtmin_model->getCourtmin($id);
 
         $data['dishesh'] = $dishesh;
         $data['res'] = $res;

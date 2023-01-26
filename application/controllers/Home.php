@@ -27,7 +27,7 @@ class Home extends CI_Controller {
 			
 			
 
-			$toEmail = "rahulrajendrashewale@gmail.com";
+			$toEmail = "qixsmus@gmail.com";
 			$mailHeaders = "From: ". $name . "<". $emailFrom .">\r\n";
 			if(mail($toEmail, $subject, $message, $mailHeaders)) {
 				$this->session->set_flashdata("msg","mail has been sent successfully");

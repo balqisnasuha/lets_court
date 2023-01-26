@@ -6,14 +6,14 @@
             <label class="control-label">Select Restaurent</label>
             <select name="rname" id="resname"
                 class="form-control <?php echo (form_error('rname') != "") ? 'is-invalid' : '';?>">
-                <option>--Select Restaurant--</option>
+                <option>--Select Court--</option>
                 <?php 
-                if (!empty($stores)) { 
-                    foreach($stores as $store) {
+                if (!empty($courtmins)) { 
+                    foreach($courtmins as $courtmin) {
                         ?>
-                <option value="<?php echo $store['r_id'];?>">
-                    <?php echo set_select('resname', $store['name']);?>
-                    <?php echo $store['name'];?>
+                <option value="<?php echo $courtmin['r_id'];?>">
+                    <?php echo set_select('resname', $courtmin['name']);?>
+                    <?php echo $courtmin['name'];?>
                 </option>
                 <?php }
                 }
@@ -114,8 +114,8 @@ const validate = () => {
     const aboutVal = about.value.trim();
     const imageVal = image.value.trim();
 
-    if (resnameVal === "--Select Restaurant--") {
-        setErrorMsg(resname, 'select restaurant name');
+    if (resnameVal === "--Select Court--") {
+        setErrorMsg(resname, 'select court name');
     } else {
         setSuccessMsg(resname);
     }

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit ('No direct script access allowed');
 
-class Store extends CI_Controller {
+class Courtmin extends CI_Controller {
 
     public function __construct(){
         parent::__construct();
@@ -13,22 +13,22 @@ class Store extends CI_Controller {
     }
 
     public function index() {
-        $this->load->model('Store_model');
-        $stores = $this->Store_model->getStores();
-        $store_data['stores'] = $stores;
+        $this->load->model('Courtmin_model');
+        $courtmins = $this->Courtmin_model->getCourtmins();
+        $courtmin_data['courtmins'] = $courtmins;
         $this->load->view('admin/partials/header');
-        $this->load->view('admin/store/list', $store_data);
+        $this->load->view('admin/courtmin/list', $courtmin_data);
         $this->load->view('admin/partials/footer');
     }
 
-    public function create_restaurant() {
+    public function create_court() {
 
         $this->load->model('Category_model');
         $cat = $this->Category_model->getCategory();
 
         $this->load->helper('common_helper');
 
-        $config['upload_path']          = './public/uploads/restaurant/';
+        $config['upload_path']          = './public/uploads/court/';
         $config['allowed_types']        = 'gif|jpg|png|jpeg';
         //$config['encrypt_name']         = true;
 
@@ -36,10 +36,10 @@ class Store extends CI_Controller {
 
         
 
-        $this->load->model('Store_model');
+        $this->load->model('Courtmin_model');
         $this->load->library('form_validation');
         $this->form_validation->set_error_delimiters('<p class="invalid-feedback">','</p>');
-        $this->form_validation->set_rules('res_name', 'Restaurant name','trim|required');
+        $this->form_validation->set_rules('res_name', 'Court name','trim|required');
         $this->form_validation->set_rules('email', 'Email','trim|required');
         $this->form_validation->set_rules('phone', 'Phone','trim|required');
         $this->form_validation->set_rules('url', 'URL','trim|required');
@@ -76,10 +76,10 @@ class Store extends CI_Controller {
                     $formArray['c_id'] = $this->input->post('c_name');
                     $formArray['address'] = $this->input->post('address');
         
-                    $this->Store_model->create($formArray);
+                    $this->Courtmin_model->create($formArray);
         
-                    $this->session->set_flashdata('res_success', 'Restaurant added successfully');
-                    redirect(base_url(). 'admin/store/index');
+                    $this->session->set_flashdata('res_success', 'Court added successfully');
+                    redirect(base_url(). 'admin/courtmin/index');
 
                 } else {
                     //we got some errors
@@ -87,7 +87,7 @@ class Store extends CI_Controller {
                     $data['errorImageUpload'] = $error;
                     $data['cats'] = $cat;
                     $this->load->view('admin/partials/header');
-                    $this->load->view('admin/store/add_res', $data);
+                    $this->load->view('admin/courtmin/add_res', $data);
                     $this->load->view('admin/partials/footer');
                 }
 
@@ -104,43 +104,43 @@ class Store extends CI_Controller {
                 $formArray['c_id'] = $this->input->post('c_name');
                 $formArray['address'] = $this->input->post('address');
     
-                $this->Store_model->create($formArray);
+                $this->Courtmin_model->create($formArray);
     
-                $this->session->set_flashdata('res_success', 'Restaurant added successfully');
-                redirect(base_url(). 'admin/store/index');
+                $this->session->set_flashdata('res_success', 'Court added successfully');
+                redirect(base_url(). 'admin/courtmin/index');
             }
 
         } else {
             $data['cats'] = $cat;
             $this->load->view('admin/partials/header');
-            $this->load->view('admin/store/add_res', $data);
+            $this->load->view('admin/courtmin/add_res', $data);
             $this->load->view('admin/partials/footer');
         }
         
     }
 
     public function edit($id) {
-        $this->load->model('Store_model');
-        $store = $this->Store_model->getStore($id);
+        $this->load->model('Courtmin_model');
+        $courtmin = $this->Courtmin_model->getCourtmin($id);
 
         $this->load->model('Category_model');
         $cat = $this->Category_model->getCategory();
 
-        if(empty($store)) {
-            $this->session->set_flashdata('error', 'Store not found');
-            redirect(base_url().'admin/store/index');
+        if(empty($courtmin)) {
+            $this->session->set_flashdata('error', 'Courtmin not found');
+            redirect(base_url().'admin/courtmin/index');
         }
 
         $this->load->helper('common_helper');
 
-        $config['upload_path']          = './public/uploads/restaurant/';
+        $config['upload_path']          = './public/uploads/court/';
         $config['allowed_types']        = 'gif|jpg|png|jpeg';
         //$config['encrypt_name']         = true;
 
         $this->load->library('upload', $config);
         $this->load->library('form_validation');
         $this->form_validation->set_error_delimiters('<p class="invalid-feedback">','</p>');
-        $this->form_validation->set_rules('res_name', 'Restaurant name','trim|required');
+        $this->form_validation->set_rules('res_name', 'Court name','trim|required');
         $this->form_validation->set_rules('email', 'Email','trim|required');
         $this->form_validation->set_rules('phone', 'Phone','trim|required');
         $this->form_validation->set_rules('url', 'URL','trim|required');
@@ -176,29 +176,29 @@ class Store extends CI_Controller {
                     $formArray['c_id'] = $this->input->post('c_name');
                     $formArray['address'] = $this->input->post('address');
         
-                    $this->Store_model->update($id, $formArray);
+                    $this->Courtmin_model->update($id, $formArray);
         
                     //deleting existing files
 
-                    if (file_exists('./public/uploads/restaurant/'.$store['img'])) {
-                        unlink('./public/uploads/restaurant/'.$store['img']);
+                    if (file_exists('./public/uploads/court/'.$courtmin['img'])) {
+                        unlink('./public/uploads/court/'.$courtmin['img']);
                     }
 
-                    if(file_exists('./public/uploads/restaurant/thumb/'.$store['img'])) {
-                        unlink('./public/uploads/restaurant/thumb/'.$store['img']);
+                    if(file_exists('./public/uploads/court/thumb/'.$courtmin['img'])) {
+                        unlink('./public/uploads/court/thumb/'.$courtmin['img']);
                     }
 
-                    $this->session->set_flashdata('res_success', 'Restaurant updated successfully');
-                    redirect(base_url(). 'admin/store/index');
+                    $this->session->set_flashdata('res_success', 'Court updated successfully');
+                    redirect(base_url(). 'admin/courtmin/index');
 
                 } else {
                     //we got some errors
                     $error = $this->upload->display_errors("<p class='invalid-feedback'>","</p>");
                     $data['errorImageUpload'] = $error;
-                    $data['store'] = $store;
+                    $data['courtmin'] = $courtmin;
                     $data['cats'] = $cat;
                     $this->load->view('admin/partials/header');
-                    $this->load->view('admin/store/edit', $data);
+                    $this->load->view('admin/courtmin/edit', $data);
                     $this->load->view('admin/partials/footer');
                 }
 
@@ -216,18 +216,18 @@ class Store extends CI_Controller {
                 $formArray['c_id'] = $this->input->post('c_name');
                 $formArray['address'] = $this->input->post('address');
     
-                $this->Store_model->update($id ,$formArray);
+                $this->Courtmin_model->update($id ,$formArray);
     
-                $this->session->set_flashdata('res_success', 'Restaurant updated successfully');
-                redirect(base_url(). 'admin/store/index');
+                $this->session->set_flashdata('res_success', 'Court updated successfully');
+                redirect(base_url(). 'admin/courtmin/index');
             }
 
 
         } else {
-            $data['store'] = $store;
+            $data['courtmin'] = $courtmin;
             $data['cats'] = $cat;
             $this->load->view('admin/partials/header');
-            $this->load->view('admin/store/edit', $data);
+            $this->load->view('admin/courtmin/edit', $data);
             $this->load->view('admin/partials/footer');
         }
 
@@ -235,26 +235,26 @@ class Store extends CI_Controller {
 
     public function delete($id){
 
-        $this->load->model('Store_model');
-        $store = $this->Store_model->getStore($id);
+        $this->load->model('Courtmin_model');
+        $courtmin = $this->Courtmin_model->getCourtmin($id);
 
-        if(empty($store)) {
-            $this->session->set_flashdata('error', 'restaurant not found');
-            redirect(base_url().'admin/store');
+        if(empty($courtmin)) {
+            $this->session->set_flashdata('error', 'court not found');
+            redirect(base_url().'admin/courtmin');
         }
 
-        if (file_exists('./public/uploads/restaurant/'.$store['img'])) {
-            unlink('./public/uploads/restaurant/'.$store['img']);
+        if (file_exists('./public/uploads/court/'.$courtmin['img'])) {
+            unlink('./public/uploads/court/'.$courtmin['img']);
         }
 
-        if(file_exists('./public/uploads/restaurant/thumb/'.$store['img'])) {
-            unlink('./public/uploads/restaurant/thumb/'.$store['img']);
+        if(file_exists('./public/uploads/court/thumb/'.$courtmin['img'])) {
+            unlink('./public/uploads/court/thumb/'.$courtmin['img']);
         }
 
-        $this->Store_model->delete($id);
+        $this->Courtmin_model->delete($id);
 
-        $this->session->set_flashdata('res_success', 'Store deleted successfully');
-        redirect(base_url().'admin/store/index');
+        $this->session->set_flashdata('res_success', 'Court deleted successfully');
+        redirect(base_url().'admin/courtmin/index');
 
     }
 }
