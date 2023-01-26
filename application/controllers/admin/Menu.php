@@ -24,8 +24,8 @@ class Menu extends CI_Controller {
     public function create_menu(){
 
         $this->load->helper('common_helper');
-        $this->load->model('Store_model');
-        $store = $this->Store_model->getStores();
+        $this->load->model('Courtmin_model');
+        $courtmin = $this->Courtmin_model->getCourtmin();
 
         $config['upload_path']          = './public/uploads/dishesh/';
         $config['allowed_types']        = 'gif|jpg|png|jpeg';
@@ -39,7 +39,7 @@ class Menu extends CI_Controller {
         $this->form_validation->set_rules('name', 'Dish name','trim|required');
         $this->form_validation->set_rules('about', 'About','trim|required');
         $this->form_validation->set_rules('price', 'Price','trim|required');
-        $this->form_validation->set_rules('rname', 'Restaurant name','trim|required');
+        $this->form_validation->set_rules('rname', 'Court name','trim|required');
 
 
         if($this->form_validation->run() == true) {
@@ -70,7 +70,7 @@ class Menu extends CI_Controller {
                     //we got some errors
                     $error = $this->upload->display_errors("<p class='invalid-feedback'>","</p>");
                     $data['errorImageUpload'] = $error; 
-                    $data['stores']= $store;
+                    $data['courtmins']= $courtmin;
                     $this->load->view('admin/partials/header');
                     $this->load->view('admin/menu/add_menu', $data);
                     $this->load->view('admin/partials/footer');
@@ -91,9 +91,9 @@ class Menu extends CI_Controller {
             }
 
         } else {
-            $store_data['stores']= $store;
+            $courtmin_data['courtmins']= $courtmin;
             $this->load->view('admin/partials/header');
-            $this->load->view('admin/menu/add_menu', $store_data);
+            $this->load->view('admin/menu/add_menu', $courtmin_data);
             $this->load->view('admin/partials/footer');
         }
         
@@ -103,8 +103,8 @@ class Menu extends CI_Controller {
         $this->load->model('Menu_model');
         $dish = $this->Menu_model->getSingleDish($id);
 
-        $this->load->model('Store_model');
-        $store = $this->Store_model->getStores();
+        $this->load->model('Courtmin_model');
+        $courtmin = $this->Courtmin_model->getCourtmins();
         
         if(empty($dish)) {
 
@@ -125,7 +125,7 @@ class Menu extends CI_Controller {
         $this->form_validation->set_rules('name', 'Dish name','trim|required');
         $this->form_validation->set_rules('about', 'About','trim|required');
         $this->form_validation->set_rules('price', 'Price','trim|required');
-        $this->form_validation->set_rules('rname', 'Restaurant name','trim|required');
+        $this->form_validation->set_rules('rname', 'Court name','trim|required');
 
         if($this->form_validation->run() == true) {
 
@@ -163,7 +163,7 @@ class Menu extends CI_Controller {
                     $error = $this->upload->display_errors("<p class='invalid-feedback'>","</p>");
                     $data['errorImageUpload'] = $error;
                     $data['dish'] = $dish;
-                    $data['stores'] = $store;
+                    $data['courtmins'] = $courtmin;
                     $this->load->view('admin/partials/header');
                     $this->load->view('admin/menu/edit', $data);
                     $this->load->view('admin/partials/footer');
@@ -185,7 +185,7 @@ class Menu extends CI_Controller {
 
         } else {
             $data['dish'] = $dish;
-            $data['stores'] = $store;
+            $data['courtmins'] = $courtmin;
             $this->load->view('admin/partials/header');
             $this->load->view('admin/menu/edit', $data);
             $this->load->view('admin/partials/footer');

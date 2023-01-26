@@ -7,7 +7,7 @@
     <div class="container res-card">
         <div class="card">
             <?php $img = $res['img'];?>
-            <img src="<?php echo base_url().'public/uploads/restaurant/thumb/'.$img; ?>" class="card-img-top" />
+            <img src="<?php echo base_url().'public/uploads/court/thumb/'.$img; ?>" class="card-img-top" />
             <div class="card-body">
                 <h4 class="card-title font-weight-bold text-primary"><?php echo $res['name']; ?></h4>
                 <p class="card-text lead"><?php echo $res['address']; ?></p>

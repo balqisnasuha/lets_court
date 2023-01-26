@@ -21,8 +21,8 @@
                         <span><i id="iarchive" class="fa fa-building" style="color:#357ae8;font-size: 2.5em;"></i></span>
                     </div>
                     <div class="media-body media-text-right">
-                        <h2><?php echo $countStore; ?></h2>
-                        <p class="m-b-0">Restaurant/s</p>
+                        <h2><?php echo $countCourtmin; ?></h2>
+                        <p class="m-b-0">Court/s</p>
                     </div>
                 </div>
             </div>
@@ -114,14 +114,14 @@
         <div class="col-md-6 mt-3">
             <div class="row">
                 <div class="col-md-12">
-                    <h2>Restaurants Report</h2>
+                    <h2>Courts Report</h2>
                 </div>
                 <div class="col-md-12">
                     <table class="table table-striped table-responsive table-hover">
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Restaurant Name</th>
+                                <th>Court Name</th>
                                 <th>Total Sales</th>
                             </tr>
                         </thead>

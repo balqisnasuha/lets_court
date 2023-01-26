@@ -38,12 +38,12 @@
                     <li class="nav-item dropdown active ">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Store
+                            Courtmin
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="<?php echo base_url().'admin/store/';?>">Manage Store</a>
+                            <a class="dropdown-item" href="<?php echo base_url().'admin/courtmin/';?>">Manage Courtmin</a>
                             <a class="dropdown-item"
-                                href="<?php echo base_url().'admin/store/create_restaurant';?>">Create Store</a>
+                                href="<?php echo base_url().'admin/courtmin/create_court';?>">Create Courtmin</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown active">

@@ -13,14 +13,14 @@ class Home extends CI_Controller {
             redirect(base_url().'admin/login/index');
         }
         $this->load->model('Admin_model');
-        $this->load->model('Store_model');
+        $this->load->model('Courtmin_model');
         $this->load->model('Menu_model');
         $this->load->model('User_model');
         $this->load->model('Order_model');
         $this->load->model('Category_model');
     }
     public function index() {
-        $data['countStore'] = $this->Store_model->countStore();
+        $data['countCourtmin'] = $this->Courtmin_model->countCourtmin();
         $data['countDish'] = $this->Menu_model->countDish();
         $data['countUser'] = $this->User_model->countUser();
         $data['countOrders'] = $this->Order_model->countOrders();
@@ -70,7 +70,7 @@ class Home extends CI_Controller {
         $pdf = new Pdf(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
         // set document information
         $pdf->SetCreator(PDF_CREATOR);
-        $pdf->SetAuthor('www.foodienator.com');
+        $pdf->SetAuthor('www.letscourt.com');
         $pdf->SetTitle('Report');
         $pdf->SetSubject('Report generated using Codeigniter and TCPDF');
         $pdf->SetKeywords('TCPDF, PDF, MySQL, Codeigniter');
@@ -111,7 +111,7 @@ class Home extends CI_Controller {
 
         if($id == 1) {
             $resReport = $this->Admin_model->getResReport();
-            $this->table->set_heading('Id', 'Restaurants', 'Total-sales');
+            $this->table->set_heading('Id', 'Court', 'Total-sales');
             foreach ($resReport as $sf):
                 $this->table->add_row($sf->r_id, $sf->name, $sf->price);
             endforeach; 

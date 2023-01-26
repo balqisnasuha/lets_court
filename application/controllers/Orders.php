@@ -11,7 +11,7 @@ class Orders extends CI_Controller {
                 redirect(base_url().'login/');
             }
         $this->load->model('Order_model');
-        $this->load->model('Store_model');
+        $this->load->model('Courtmin_model');
         $this->load->model('Menu_model');
     }
     public function index() {
@@ -45,7 +45,7 @@ class Orders extends CI_Controller {
         $u_id = $order['u_id'];
         $r_id = $order['r_id'];
         $d_id = $order['d_id'];
-        $res = $this->Store_model->getStore($r_id);
+        $res = $this->Courtmin_model->getCourtmin($r_id);
         $data['res'] = $res;   
         $dish = $this->Menu_model->getSingleDish($d_id);
         $data['dish'] = $dish;

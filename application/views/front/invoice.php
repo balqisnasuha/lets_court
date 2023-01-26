@@ -46,7 +46,7 @@
                     <table class="table responsive">
                         <thead class="bg-dark text-white">
                             <tr>
-                                <th>Restaurant</th>
+                                <th>Court</th>
                                 <th>Dish</th>
                                 <th>Quantity</th>
                                 <th>Price</th>

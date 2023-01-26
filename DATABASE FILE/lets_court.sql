@@ -75,7 +75,7 @@ INSERT INTO `dishesh` (`d_id`, `r_id`, `name`, `about`, `price`, `img`) VALUES
 (12, 6, 'Steak au poivre', 'Steak au poivre or pepper steak is a French dish that consists of a steak, traditionally a filet mignon, coated with coarsely cracked peppercorns and then cooked. a steak that has had coarsely ground black pepper pressed into it before cooking, is served ', 10, 'stkkk.jpg'),
 (13, 5, 'French Fries', 'French fries, or simply fries, chips, finger chips, or French-fried potatoes, are batonnet or allumette-cut deep-fried potatoes. French fries have numerous variants, from thick-cut to shoestring, crinkle, curly and many other names.', 2, 'ffries.jpg'),
 (14, 5, 'Roast Beef Sandwich', 'Roast Beef Sandwich Recipe with Horseradish Cream is absolutely loaded up with flavor, from the thinly sliced roast beef to the roasted potatoes, to the horseradish cream, if you want delicious, then this is the sandwich for you.', 5, 'roast-beef-sandwich.jpg'),
-(15, 4, 'Philly Cheesesteak', 'A cheesesteak is a sandwich made from thinly sliced pieces of beefsteak and melted cheese in a long hoagie roll. A popular regional fast food, it has its roots in the U.S. city of Philadelphia, Pennsylvania. Cheesesteaks have become popular at restaurants', 5, 'philly-cheesesteak-3c4be15.jpg'),
+(15, 4, 'Philly Cheesesteak', 'A cheesesteak is a sandwich made from thinly sliced pieces of beefsteak and melted cheese in a long hoagie roll. A popular regional fast food, it has its roots in the U.S. city of Philadelphia, Pennsylvania. Cheesesteaks have become popular at courts', 5, 'philly-cheesesteak-3c4be15.jpg'),
 (16, 4, 'Sesame Chicken', 'Sesame chicken is an American-Chinese dish made by deep-frying deboned and battered chicken pieces which are then dressed with a thick, translucent, sweet sauce consisting of chicken broth, sugar, corn starch, and vinegar or sake. additionally topped with', 11, 'sschicken.jpg'),
 (17, 4, 'Mozzarella Sticks', 'One of America\'s favorite cheesy snacks consisting of battered, breaded, and deep-fried pieces of mozzarella cheese. Served as an appetizer with marinara sauce, these cheesy sticks can also be paired with plum sauce, honey mustard sauce, raspberry sauce, ', 9, 'mozzsticks.jpg'),
 (18, 2, 'Chimichanga', 'Chimichanga is a wrapped, deep-fried flour tortilla filled with a variety of ingredients such as shredded chicken, beef, rice, beans, onions, and cheese. Served topped with sour cream, guacamole and salsa, this Mexican inspired recipe is delicious!', 9, 'chimichangs.jpg'),
@@ -86,10 +86,10 @@ INSERT INTO `dishesh` (`d_id`, `r_id`, `name`, `about`, `price`, `img`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `restaurants`
+-- Table structure for table `courts`
 --
 
-CREATE TABLE `restaurants` (
+CREATE TABLE `courts` (
   `r_id` int(11) NOT NULL,
   `c_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -104,15 +104,15 @@ CREATE TABLE `restaurants` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `restaurants`
+-- Dumping data for table `courts`
 --
 
-INSERT INTO `restaurants` (`r_id`, `c_id`, `name`, `email`, `phone`, `url`, `o_hr`, `c_hr`, `o_days`, `address`, `img`) VALUES
+INSERT INTO `courts` (`r_id`, `c_id`, `name`, `email`, `phone`, `url`, `o_hr`, `c_hr`, `o_days`, `address`, `img`) VALUES
 (1, 2, 'Giulia Restro', 'gr69stro@gmail.com', '1-555-555-5555', 'giuliarestroo.com', '8am', '7pm', 'mon-sat', '1259  Wood Street', 'grestro.jpg'),
 (2, 6, 'Vernick Restro', 'vernic@gmail.com', '1-567-567-8888', 'foodvernick.com', '10am', '7pm', '24hr-x7', '1812  Fleming Street', 'vrfnb.jpg'),
 (3, 6, 'Townsend', 'townsend@gmail.com', '1-333-222-7474', 'townsend.com', '8am', '8pm', 'mon-sat', '528  Veltri Drive', 'TOWNSEND.jpg'),
 (4, 6, 'Artisan Bar & Grill', 'grilltisan@gmail.com', '1-222-333-7878', 'artisanbargr.com', '11am', '8pm', '24hr-x7', '1659  Ritter Avenue', 'artisan-cafe-berea-ky.jpg'),
-(5, 6, 'Highland Restaurant', 'contact@hlrt.com', '11555578522', 'highlandrestro.com', '9am', '8pm', '24hr-x7', '1547  Birch  Street', 'hlmg.jpg'),
+(5, 6, 'Highland Court', 'contact@hlrt.com', '11555578522', 'highlandrestro.com', '9am', '8pm', '24hr-x7', '1547  Birch  Street', 'hlmg.jpg'),
 (6, 3, 'Alchemist', 'alchems@gmail.com', '12454850000', 'alchemist.food', '10am', '8pm', 'mon-sat', '60  Trehafod Road', 'icnr.jpg'),
 (7, 6, 'Treehouse Restro', 'treehsr@gmail.com', '12457854101', 'treehouserestr.com', '8am', '10pm', 'mon-sat', '2902 Benson Park Drive', 'treehouserestr.jpg');
 
@@ -233,9 +233,9 @@ ALTER TABLE `dishesh`
   ADD PRIMARY KEY (`d_id`);
 
 --
--- Indexes for table `restaurants`
+-- Indexes for table `courts`
 --
-ALTER TABLE `restaurants`
+ALTER TABLE `courts`
   ADD PRIMARY KEY (`r_id`);
 
 --
@@ -271,9 +271,9 @@ ALTER TABLE `admin`
 ALTER TABLE `dishesh`
   MODIFY `d_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
--- AUTO_INCREMENT for table `restaurants`
+-- AUTO_INCREMENT for table `courts`
 --
-ALTER TABLE `restaurants`
+ALTER TABLE `courts`
   MODIFY `r_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `res_category`

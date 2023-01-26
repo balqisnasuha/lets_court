@@ -24,7 +24,7 @@ class Admin_model extends CI_Model {
         $this->db->select('u.r_id, name, price, success-date');
         $this->db->select_sum('price');
         $this->db->from('user_orders as u');
-        $this->db->join('restaurants as r', 'r.r_id = u.r_id');
+        $this->db->join('court as r', 'r.r_id = u.r_id');
         $result = $this->db->get()->result();
         return $result;
     }
@@ -43,7 +43,7 @@ class Admin_model extends CI_Model {
         MAX(u.quantity) AS quantity, 
         SUM(price) AS total
         FROM user_orders AS u
-        INNER JOIN restaurants as r
+        INNER JOIN court as r
         ON u.r_id = r.r_id
         GROUP BY u.r_id';
 
