@@ -10,8 +10,8 @@
             <div class="carousel-caption text-left">
                 <h1 class="display-2">LET'S COURT</h1>
                 <h3>Book Azman Hashim's Court with us!</h3>
-                <a href="<?php echo base_url().'court/index'?>" class="btn btn-outline-light btn-lg">Order Now</a>
-                <a href="<?php echo base_url().'court/index'?>" class="btn btn-primary btn-lg">View Menu</a>
+                <a href="<?php echo base_url().'court/index'?>" class="btn btn-outline-light btn-lg">Book Now</a>
+                <a href="<?php echo base_url().'court/index'?>" class="btn btn-primary btn-lg">View Court</a>
             </div>
         </div>
         <div class="carousel-item">
@@ -19,8 +19,8 @@
             <div class="carousel-caption text-right">
                 <h1 class="display-2">LET'S COURT</h1>
                 <h3>Book Azman Hashim's Court with us!</h3>
-                <a href="<?php echo base_url().'court/index'?>" class="btn btn-outline-light btn-lg">Order Now</a>
-                <a href="<?php echo base_url().'court/index'?>" class="btn btn-primary btn-lg">View Menu</a>
+                <a href="<?php echo base_url().'court/index'?>" class="btn btn-outline-light btn-lg">Book Now</a>
+                <a href="<?php echo base_url().'court/index'?>" class="btn btn-primary btn-lg">View Court</a>
             </div>
         </div>
         <div class="carousel-item">
