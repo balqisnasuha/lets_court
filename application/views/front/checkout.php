@@ -51,25 +51,32 @@
         <div class="col-md-4">
             <form action="<?php echo base_url().'checkout/index';?>" method="POST"
                 class="form-container  shadow-container" style="width:80%">
-                <h3 class="mt-3">Shipping Details</h3><hr>
-                <div class="form-group">
-                    <label for="address">Address</label>
-                    <textarea name="address" type="text" style="height:70px;"
-                        class="form-control
-                    <?php echo (form_error('address') != "") ? 'is-invalid' : '';?>"><?php echo set_value('address', $user['address']);?></textarea>
-                    <?php echo form_error('address'); ?>
-                </div>
-                <p class="lead mb-0">Cash On Delivery</p>
+                
+
+                <br>
+                <br>
+                <br>
+                <p class="lead mb-0">Pay at Counter</p>
                 <div class="container p-2 mb-3" style="background: #e5e5e5;">
-                    Pay with Cash on Delivery
+                    Only pay when your booking is accepted :)
                 </div>
                 <div>
                     <a href="<?php echo base_url().'cart'; ?>" class="btn btn-warning"><i class="fas fa-angle-left"></i>
-                        Back to cart</a>
-                    <button type="submit" name="placeOrder" class="btn btn-success">Place Order <i
+                        Back to booking</a>
+                        
+                    <button type="submit" name="placeOrder" class="btn btn-success">
+                        Confirm Booking <i
                             class="fas fa-angle-right"></i></button>
                 </div>
                 </from>
         </div>
     </div>
 </div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
