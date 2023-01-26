@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="<?php echo base_url().'public/front/img/dash2.jpg';?>" alt="Spaghetti">
+            <img src="<?php echo base_url().'public/front/img/dash2.jpg';?>" alt="Spaghettiezzaty">
             <div class="carousel-caption text-right">
                 <h1 class="display-2">LET'S COURT</h1>
                 <h3>Book Azman Hashim's Court with us!</h3>
