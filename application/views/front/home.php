@@ -41,8 +41,7 @@
         </div>
         <hr>
         <div class="col-12">
-            <p class="lead">The easiest way to your food. Food Ordering System provides fresh delivery
-                with in the 30 minutes and provide free food if order is not on time. So don't wait and start ordering right now!</p>
+            <p class="lead">Tan Sri Azman Hashim, the founder and chairman of Ambank Group, donated RM10 million for the construction of the Azman Hashim Sports Arena which is located on the USM main campus here. The multi-purpose complex known as Azman Hashim Sports Arena has an area of 5,098 square meters. Various facilities in the arena will be built, namely 1 volleyball court, 2 futsal courts and 10 badminton courts. This is the second indoor Sports Complex after USM had a Badminton Sports Complex built in the 80s.</p>
         </div>
     </div>
 </div>
