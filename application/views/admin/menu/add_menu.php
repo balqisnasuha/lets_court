@@ -1,7 +1,7 @@
 <div class="conatiner">
     <form action="<?php echo base_url().'admin/menu/create_menu';?>" method="POST" id="myForm" name="myForm"
         class="form-container mx-auto  shadow-container" style="width:80%" enctype="multipart/form-data">
-        <h3 class="mb-3 text-center">Add Food Items</h3>
+        <h3 class="mb-3 text-center">Add Court</h3>
         <div class="form-group">
             <label class="control-label">Select Court</label>
             <select name="rname" id="resname"
@@ -51,7 +51,7 @@
                     <span></span>
                 </div>
                 <div class="form-group">
-                    <label for="img">Food Image</label>
+                    <label for="img">Court Image</label>
                     <input type="file" id="image" name="image" placeholder="Enter Image" class="form-control my-2
                     <?php echo(!empty($errorImageUpload))  ? 'is-invalid' : '';?>">
                     <?php echo (!empty($errorImageUpload)) ? $errorImageUpload : '';?>

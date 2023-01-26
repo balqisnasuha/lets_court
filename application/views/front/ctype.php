@@ -12,7 +12,7 @@
                 <h4 class="card-title font-weight-bold text-primary"><?php echo $res['name']; ?></h4>
                 <p class="card-text lead"><?php echo $res['address']; ?></p>
                 <p class="card-text">
-                A feast of gorgeousness awaits you with super-seasonal dishes created with love by our wonderful chefs.
+                Select your type of court according to your preferences.
                 </p>
             </div>
         </div>

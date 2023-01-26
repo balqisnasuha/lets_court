@@ -14,7 +14,7 @@ function updateCartItem(obj, rowid) {
 }
 </script>
 <div class="container">
-    <h2>Shopping Cart</h2>
+    <h2>Booking List</h2>
     <div class="table-responsive-sm">
         <table class="table table-striped table-hover">
             <thead>
@@ -59,7 +59,7 @@ function updateCartItem(obj, rowid) {
             </tbody>
             <tfoot>
                 <tr>
-                    <td><a href="<?php echo base_url().'court' ?>" class="btn btn-sm btn-warning"><i class="fas fa-angle-left"></i> Continue Ordering</a></td>
+                    <td><a href="<?php echo base_url().'court' ?>" class="btn btn-sm btn-warning"><i class="fas fa-angle-left"></i> Continue Booking</a></td>
                     <td colspan="3"></td>
                     <?php  if($this->cart->total_items() > 0) { ?>
                     <td class="text-left">Grand Total: <b><?php echo 'RM'.$this->cart->total();?></b></td>
@@ -70,3 +70,12 @@ function updateCartItem(obj, rowid) {
         </table>
     </div>
 </div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br><br>
+<br>

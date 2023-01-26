@@ -12,7 +12,7 @@ class Courtmin_model extends CI_Model {
         return $result;
     }
 
-    public function getCourtmin($id) {
+    public function getCourtmin($id=null) {
         $this->db->where('r_id', $id);
         $courtmin = $this->db->get('court')->row_array();
         return $courtmin;

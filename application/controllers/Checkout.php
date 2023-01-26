@@ -64,6 +64,7 @@ class Checkout extends CI_Controller {
             $orderData[$i]['quantity'] = $item['qty'];
             $orderData[$i]['price'] = $item['subtotal'];
             $orderData[$i]['date'] = date('Y-m-d H:i:s', now());
+           // $orderData[$i]['bookingdate'] = 
             $orderData[$i]['success-date'] = date('Y-m-d H:i:s', now());
             $i++;
         }
