@@ -21,7 +21,7 @@
                             <td>
                                 <?php $image = $item['image'];?>
                                 <img class="" width="100"
-                                    src="<?php echo base_url().'public/uploads/dishesh/thumb/'.$image; ?>">
+                                    src="<?php echo base_url().'public/uploads/ctypeesh/thumb/'.$image; ?>">
                             </td>
                             <td><?php echo $item['name']; ?></td>
                             <td><?php echo 'RM'.$item['price']; ?></td>

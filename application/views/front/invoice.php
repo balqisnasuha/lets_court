@@ -47,7 +47,7 @@
                         <thead class="bg-dark text-white">
                             <tr>
                                 <th>Court</th>
-                                <th>Dish</th>
+                                <th>Court Type</th>
                                 <th>Quantity</th>
                                 <th>Price</th>
                             </tr>
@@ -57,7 +57,7 @@
                                 <td><?php echo $res['name']; ?></td>
                                 <td><?php echo $order['d_name']; ?></td>
                                 <td><?php echo $order['quantity']; ?></td>
-                                <td><?php echo '$'.$dish['price']; ?></td>
+                                <td><?php echo '$'.$ctype['price']; ?></td>
                             </tr>
                             <tr>
                                 <td colspan="2"></td>

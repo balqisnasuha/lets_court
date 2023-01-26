@@ -34,8 +34,8 @@
                         <span><i class="fa fa-utensils" style="color:#17a2b8; font-size: 2.5em;"></i></span>
                     </div>
                     <div class="media-body media-text-right">
-                        <h2><?php echo $countDish; ?></h2>
-                        <p class="m-b-0">Dishes</p>
+                        <h2><?php echo $countCtype; ?></h2>
+                        <p class="m-b-0">Ctypees</p>
                     </div>
                 </div>
             </div>
@@ -151,20 +151,20 @@
         <div class="col-md-6 mt-3">
             <div class="row">
                 <div class="col-md-12">
-                    <h2>Dishes Report</h2>
+                    <h2>Ctypees Report</h2>
                 </div>
                 <div class="col-md-12">
                     <table class="table table-striped table-responsive table-hover">
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Dish Name</th>
+                                <th>Court Type</th>
                                 <th>Ordered Count</th>
                             </tr>
                         </thead>
                         <tbody id="myTable">
-                            <?php if(!empty($dishReport)) {?>
-                            <?php foreach($dishReport as $report) { ?>
+                            <?php if(!empty($ctypeReport)) {?>
+                            <?php foreach($ctypeReport as $report) { ?>
                             <tr>
                                 <td><?php echo $report->d_id; ?></td>
                                 <td><?php echo $report->d_name; ?></td>

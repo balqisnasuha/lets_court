@@ -18,21 +18,21 @@
         </div>
     </div>
 </div>
-<div class="container p-4 dish-card">
+<div class="container p-4 ctype-card">
     <div class="row">
-        <?php if(!empty($dishesh)) { ?>
-        <?php foreach($dishesh as $dish) { ?>
+        <?php if(!empty($ctypeesh)) { ?>
+        <?php foreach($ctypeesh as $ctype) { ?>
         <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
             <div class="card mb-4 shadow-sm">
-                <?php $image = $dish['img'];?>
-                <img class="card-img-top" src="<?php echo base_url().'public/uploads/dishesh/thumb/'.$image; ?>">
+                <?php $image = $ctype['img'];?>
+                <img class="card-img-top" src="<?php echo base_url().'public/uploads/ctypeesh/thumb/'.$image; ?>">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
-                        <h4 class="card-title"><?php echo $dish['name']; ?></h4>
-                        <h4 class="text-muted"><b>$<?php echo $dish['price']; ?></b></h4>
+                        <h4 class="card-title"><?php echo $ctype['name']; ?></h4>
+                        <h4 class="text-muted"><b>$<?php echo $ctype['price']; ?></b></h4>
                     </div>
-                    <p class="card-text"><?php echo $dish['about']; ?></p>
-                    <a href="<?php echo base_url().'Dish/addToCart/'.$dish['d_id']; ?>" class="btn btn-primary"><i
+                    <p class="card-text"><?php echo $ctype['about']; ?></p>
+                    <a href="<?php echo base_url().'Ctype/addToCart/'.$ctype['d_id']; ?>" class="btn btn-primary"><i
                             class="fas fa-shopping-cart"></i> Insert into booking list</a>
                 </div>
             </div>

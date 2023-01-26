@@ -47,8 +47,8 @@ class Orders extends CI_Controller {
         $d_id = $order['d_id'];
         $res = $this->Courtmin_model->getCourtmin($r_id);
         $data['res'] = $res;   
-        $dish = $this->Menu_model->getSingleDish($d_id);
-        $data['dish'] = $dish;
+        $ctype = $this->Menu_model->getSingleCtype($d_id);
+        $data['ctype'] = $ctype;
     
         $user = $this->session->userdata('user');
         if($u_id == $user['user_id']) {

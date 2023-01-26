@@ -6,7 +6,7 @@
         <hr>
     </div>
 </div>
-<div class="container text-center padding dish-card">
+<div class="container text-center padding ctype-card">
     <div class="row container">
         <?php if(!empty($courtmins)) { ?>
         <?php foreach($courtmins as $courtmin) { ?>
@@ -24,7 +24,7 @@
                     <p class="card-text mb-0"><?php echo $courtmin['o_days']; ?></p>
                     <p class="card-text"><?php echo $courtmin['o_hr']; ?> - <?php echo $courtmin['c_hr']; ?></p> -->
                     <hr>
-                    <a href="<?php echo base_url().'dish/list/'.$courtmin['r_id']; ?>" class="btn btn-primary">Book</a>
+                    <a href="<?php echo base_url().'ctype/list/'.$courtmin['r_id']; ?>" class="btn btn-primary">Book</a>
                 </div>
             </div>
         </div>

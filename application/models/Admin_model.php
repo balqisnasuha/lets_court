@@ -29,7 +29,7 @@ class Admin_model extends CI_Model {
         return $result;
     }
 
-    public function dishReport() {
+    public function ctypeReport() {
         $query = $this->db->query('SELECT d_id, d_name, 
         SUM(quantity) AS qty
         FROM user_orders
@@ -38,7 +38,7 @@ class Admin_model extends CI_Model {
         return $query->result();
     }
 
-    public function mostOrderdDishes() {
+    public function mostOrderdCtypees() {
         $sql = 'SELECT u.r_id, r.name, u.price, u.d_name, 
         MAX(u.quantity) AS quantity, 
         SUM(price) AS total

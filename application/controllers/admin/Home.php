@@ -21,7 +21,7 @@ class Home extends CI_Controller {
     }
     public function index() {
         $data['countCourtmin'] = $this->Courtmin_model->countCourtmin();
-        $data['countDish'] = $this->Menu_model->countDish();
+        $data['countCtype'] = $this->Menu_model->countCtype();
         $data['countUser'] = $this->User_model->countUser();
         $data['countOrders'] = $this->Order_model->countOrders();
         $data['countCategory'] = $this->Category_model->countCategory();
@@ -32,8 +32,8 @@ class Home extends CI_Controller {
         $resReport = $this->Admin_model->getResReport();
         $data['resReport'] = $resReport;
 
-        $dishReport = $this->Admin_model->dishReport();
-        $data['dishReport'] = $dishReport;
+        $ctypeReport = $this->Admin_model->ctypeReport();
+        $data['ctypeReport'] = $ctypeReport;
         $this->load->view('admin/partials/header');
         $this->load->view('admin/dashboard', $data);
         $this->load->view('admin/partials/footer');
@@ -45,10 +45,10 @@ class Home extends CI_Controller {
         $this->load->view('admin/reports/res_report', $data);
     }
     
-    public function dishesReport() {
-        $dishReport = $this->Admin_model->dishReport();
-        $data['dishReport'] = $dishReport;
-        $this->load->view('admin/reports/dish_report', $data);
+    public function ctypeesReport() {
+        $ctypeReport = $this->Admin_model->ctypeReport();
+        $data['ctypeReport'] = $ctypeReport;
+        $this->load->view('admin/reports/ctype_report', $data);
     }
 
     public function usersReport() {
@@ -117,9 +117,9 @@ class Home extends CI_Controller {
             endforeach; 
 
         } else if($id == 2) {
-            $this->table->set_heading('Id', 'Dish name', 'total number of times dish ordered');
-            $dishReport = $this->Admin_model->dishReport();
-            foreach ($dishReport as $sf):
+            $this->table->set_heading('Id', 'Ctype name', 'total number of times court ordered');
+            $ctypeReport = $this->Admin_model->ctypeReport();
+            foreach ($ctypeReport as $sf):
                 $this->table->add_row($sf->d_id, $sf->d_name, $sf->qty);
             endforeach;
             

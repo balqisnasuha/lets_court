@@ -25,10 +25,10 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="name">Dish Name</label>
+                    <label for="name">Court type</label>
                     <input type="text" class="form-control my-2 
                     <?php echo (form_error('name') != "") ? 'is-invalid' : '';?>" name="name" id="name"
-                        placeholder="Enter Dish name" value="<?php echo set_value('name'); ?>">
+                        placeholder="Enter Court Type" value="<?php echo set_value('name'); ?>">
                     <?php echo form_error('name'); ?>
                     <span></span>
                 </div>
@@ -66,7 +66,7 @@
 <script>
     const form = document.getElementById('myForm');
     const resname = document.getElementById("resname");
-    const dishname = document.getElementById("name");
+    const ctypename = document.getElementById("name");
     const price = document.getElementById("price");
     const about = document.getElementById("about");
     const image = document.getElementById("image");
@@ -106,7 +106,7 @@
 
     const validate = () => {
         const resnameVal = resname.value.trim();
-        const dishnameVal = dishname.value.trim();
+        const ctypenameVal = ctypename.value.trim();
         const priceVal = price.value.trim();
         const aboutVal = about.value.trim();
         const imageVal = image.value.trim();
@@ -116,10 +116,10 @@
         } else {
             setSuccessMsg(resname);
         }
-        if (dishnameVal === "") {
-            setErrorMsg(dishname, 'dish name cannot be blank');
+        if (ctypenameVal === "") {
+            setErrorMsg(ctypename, 'court type cannot be blank');
         } else {
-            setSuccessMsg(dishname);
+            setSuccessMsg(ctypename);
         }
         if (priceVal === "") {
             setErrorMsg(price, 'price cannot be blank');

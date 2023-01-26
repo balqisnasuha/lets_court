@@ -1,8 +1,8 @@
 <div class="container mt-3">
     <div class="container shadow-container">
-        <?php if($this->session->flashdata('dish_success') != ""):?>
+        <?php if($this->session->flashdata('ctype_success') != ""):?>
         <div class="alert alert-success">
-            <?php echo $this->session->flashdata('dish_success');?>
+            <?php echo $this->session->flashdata('ctype_success');?>
         </div>
         <?php endif ?>
         <?php if($this->session->flashdata('error') != ""):?>
@@ -21,26 +21,26 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Dish Name</th>
+                        <th>Court Type</th>
                         <th>About</th>
                         <th>Price</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody id="myTable">
-                    <?php if(!empty($dishesh)) { ?>
-                    <?php foreach($dishesh as $dish) {?>
+                    <?php if(!empty($ctypeesh)) { ?>
+                    <?php foreach($ctypeesh as $ctype) {?>
                     <tr>
-                        <td><?php echo $dish['r_id']; ?></td>
-                        <td><?php echo $dish['name']; ?></td>
-                        <td><?php echo $dish['about']; ?></td>
-                        <td><?php echo "$".$dish['price']; ?></td>
+                        <td><?php echo $ctype['r_id']; ?></td>
+                        <td><?php echo $ctype['name']; ?></td>
+                        <td><?php echo $ctype['about']; ?></td>
+                        <td><?php echo "$".$ctype['price']; ?></td>
                         <td>
-                            <a href="<?php echo base_url().'admin/menu/edit/'.$dish['d_id']; ?>"
+                            <a href="<?php echo base_url().'admin/menu/edit/'.$ctype['d_id']; ?>"
                                 class="btn btn-info mb-1"><i
                                     class="fas fa-edit mr-1"></i>Edit</a>
 
-                            <a href="javascript:void(0);" onclick="deleteMenu(<?php echo $dish['d_id']; ?>)"
+                            <a href="javascript:void(0);" onclick="deleteMenu(<?php echo $ctype['d_id']; ?>)"
                                 class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete</a>
 
                         </td>
@@ -58,7 +58,7 @@
 </div>
 <script type="text/javascript">
 function deleteMenu(id) {
-    if (confirm("Are you sure you want to delete dish?")) {
+    if (confirm("Are you sure you want to delete this court type?")) {
         window.location.href = '<?php echo base_url().'admin/menu/delete/';?>' + id;
     }
 }

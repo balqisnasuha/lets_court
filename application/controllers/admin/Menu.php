@@ -14,8 +14,8 @@ class Menu extends CI_Controller {
 
     public function index() {
         $this->load->model('Menu_model');
-        $dishesh = $this->Menu_model->getMenu();
-        $data['dishesh'] = $dishesh;
+        $ctypeesh = $this->Menu_model->getMenu();
+        $data['ctypeesh'] = $ctypeesh;
         $this->load->view('admin/partials/header');
         $this->load->view('admin/menu/list', $data);
         $this->load->view('admin/partials/footer');
@@ -27,7 +27,7 @@ class Menu extends CI_Controller {
         $this->load->model('Courtmin_model');
         $courtmin = $this->Courtmin_model->getCourtmin();
 
-        $config['upload_path']          = './public/uploads/dishesh/';
+        $config['upload_path']          = './public/uploads/ctypeesh/';
         $config['allowed_types']        = 'gif|jpg|png|jpeg';
         //$config['encrypt_name']         = true;
 
@@ -36,7 +36,7 @@ class Menu extends CI_Controller {
         $this->load->model('Menu_model');
         $this->load->library('form_validation');
         $this->form_validation->set_error_delimiters('<p class="invalid-feedback">','</p>');
-        $this->form_validation->set_rules('name', 'Dish name','trim|required');
+        $this->form_validation->set_rules('name', 'Ctype name','trim|required');
         $this->form_validation->set_rules('about', 'About','trim|required');
         $this->form_validation->set_rules('price', 'Price','trim|required');
         $this->form_validation->set_rules('rname', 'Court name','trim|required');
@@ -63,7 +63,7 @@ class Menu extends CI_Controller {
         
                     $this->Menu_model->create($formArray);
         
-                    $this->session->set_flashdata('dish_success', 'Menu added successfully');
+                    $this->session->set_flashdata('ctype_success', 'Menu added successfully');
                     redirect(base_url(). 'admin/menu/index');
 
                 } else {
@@ -86,7 +86,7 @@ class Menu extends CI_Controller {
     
                 $this->Menu_model->create($formArray);
                 
-                $this->session->set_flashdata('dish_success', 'Dish added successfully');
+                $this->session->set_flashdata('ctype_success', 'Court type added successfully');
                 redirect(base_url(). 'admin/menu/index');
             }
 
@@ -101,20 +101,20 @@ class Menu extends CI_Controller {
 
     public function edit($id) {
         $this->load->model('Menu_model');
-        $dish = $this->Menu_model->getSingleDish($id);
+        $ctype = $this->Menu_model->getSingleCtype($id);
 
         $this->load->model('Courtmin_model');
         $courtmin = $this->Courtmin_model->getCourtmins();
         
-        if(empty($dish)) {
+        if(empty($ctype)) {
 
-            $this->session->set_flashdata('error', 'Dish not found');
+            $this->session->set_flashdata('error', 'Court not found');
             redirect(base_url(). 'admin/menu/index');
         }
 
         $this->load->helper('common_helper');
 
-        $config['upload_path']          = './public/uploads/dishesh/';
+        $config['upload_path']          = './public/uploads/ctypeesh/';
         $config['allowed_types']        = 'gif|jpg|png|jpeg';
         //$config['encrypt_name']         = true;
 
@@ -122,7 +122,7 @@ class Menu extends CI_Controller {
 
         $this->load->library('form_validation');
         $this->form_validation->set_error_delimiters('<p class="invalid-feedback">','</p>');
-        $this->form_validation->set_rules('name', 'Dish name','trim|required');
+        $this->form_validation->set_rules('name', 'Ctype name','trim|required');
         $this->form_validation->set_rules('about', 'About','trim|required');
         $this->form_validation->set_rules('price', 'Price','trim|required');
         $this->form_validation->set_rules('rname', 'Court name','trim|required');
@@ -147,22 +147,22 @@ class Menu extends CI_Controller {
 
                     //deleting existing images
 
-                    if (file_exists('./public/uploads/dishesh/'.$dish['img'])) {
-                        unlink('./public/uploads/dishesh/'.$dish['img']);
+                    if (file_exists('./public/uploads/ctypeesh/'.$ctype['img'])) {
+                        unlink('./public/uploads/ctypeesh/'.$ctype['img']);
                     }
 
-                    if(file_exists('./public/uploads/dishesh/thumb/'.$dish['img'])) {
-                        unlink('./public/uploads/dishesh/thumb/'.$dish['img']);
+                    if(file_exists('./public/uploads/ctypeesh/thumb/'.$ctype['img'])) {
+                        unlink('./public/uploads/ctypeesh/thumb/'.$ctype['img']);
                     }
         
-                    $this->session->set_flashdata('dish_success', 'Dish updated successfully');
+                    $this->session->set_flashdata('ctype_success', 'Court updated successfully');
                     redirect(base_url(). 'admin/menu/index');
 
                 } else {
                     //we got some errors
                     $error = $this->upload->display_errors("<p class='invalid-feedback'>","</p>");
                     $data['errorImageUpload'] = $error;
-                    $data['dish'] = $dish;
+                    $data['ctype'] = $ctype;
                     $data['courtmins'] = $courtmin;
                     $this->load->view('admin/partials/header');
                     $this->load->view('admin/menu/edit', $data);
@@ -179,12 +179,12 @@ class Menu extends CI_Controller {
     
                 $this->Menu_model->update($id, $formArray);
     
-                $this->session->set_flashdata('dish_success', 'Dish updated successfully');
+                $this->session->set_flashdata('ctype_success', 'Court updated successfully');
                 redirect(base_url(). 'admin/menu/index');
             }
 
         } else {
-            $data['dish'] = $dish;
+            $data['ctype'] = $ctype;
             $data['courtmins'] = $courtmin;
             $this->load->view('admin/partials/header');
             $this->load->view('admin/menu/edit', $data);
@@ -196,24 +196,24 @@ class Menu extends CI_Controller {
     public function delete($id){
 
         $this->load->model('Menu_model');
-        $dish = $this->Menu_model->getSingleDish($id);
+        $ctype = $this->Menu_model->getSingleCtype($id);
 
-        if(empty($dish)) {
-            $this->session->set_flashdata('error', 'dish not found');
+        if(empty($ctype)) {
+            $this->session->set_flashdata('error', 'ctype not found');
             redirect(base_url().'admin/menu');
         }
 
-        if (file_exists('./public/uploads/dishesh/'.$dish['img'])) {
-            unlink('./public/uploads/dishesh/'.$dish['img']);
+        if (file_exists('./public/uploads/ctypeesh/'.$ctype['img'])) {
+            unlink('./public/uploads/ctypeesh/'.$ctype['img']);
         }
 
-        if(file_exists('./public/uploads/dishesh/thumb/'.$dish['img'])) {
-            unlink('./public/uploads/dishesh/thumb/'.$dish['img']);
+        if(file_exists('./public/uploads/ctypeesh/thumb/'.$ctype['img'])) {
+            unlink('./public/uploads/ctypeesh/thumb/'.$ctype['img']);
         }
 
         $this->Menu_model->delete($id);
 
-        $this->session->set_flashdata('dish_success', 'dish deleted successfully');
+        $this->session->set_flashdata('ctype_success', 'Court deleted successfully');
         redirect(base_url().'admin/menu/index');
 
     }

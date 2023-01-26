@@ -1,9 +1,9 @@
 <div class="conatiner">
-    <form id="myForm" action="<?php echo base_url().'admin/menu/edit/'.$dish['d_id'];?>" method="POST"
+    <form id="myForm" action="<?php echo base_url().'admin/menu/edit/'.$ctype['d_id'];?>" method="POST"
         class="form-container mx-auto  shadow-container" style="width:80%" enctype="multipart/form-data">
-        <h3 class="mb-3 text-center">Edit Dish "<?php echo $dish['name']; ?>"</h3>
+        <h3 class="mb-3 text-center">Edit Court Type "<?php echo $ctype['name']; ?>"</h3>
         <div class="form-group">
-            <label class="control-label">Select Restaurent</label>
+            <label class="control-label">Select Court</label>
             <select name="rname" id="resname"
                 class="form-control <?php echo (form_error('rname') != "") ? 'is-invalid' : '';?>">
                 <option>--Select Court--</option>
@@ -25,10 +25,10 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="name">Dish Name</label>
+                    <label for="name">Court Type</label>
                     <input type="text" class="form-control my-2 
                     <?php echo (form_error('name') != "") ? 'is-invalid' : '';?>" name="name" id="name"
-                        placeholder="Enter dish name" value="<?php echo set_value('name', $dish['name']); ?>">
+                        placeholder="Enter Court type" value="<?php echo set_value('name', $ctype['name']); ?>">
                     <span></span>
                     <?php echo form_error('name'); ?>
                 </div>
@@ -38,7 +38,7 @@
                     <label for="price">Price</label>
                     <input type="Price" class="form-control my-2
                     <?php echo (form_error('price') != "") ? 'is-invalid' : '';?>" id="price" name="price"
-                        placeholder="Enter Price" value="<?php echo set_value('price', $dish['price']); ?>">
+                        placeholder="Enter Price" value="<?php echo set_value('price', $ctype['price']); ?>">
                     <span></span>
                     <?php echo form_error('price'); ?>
                 </div>
@@ -48,7 +48,7 @@
                     <label for="about">About</label>
                     <input type="text" class="form-control my-2
                     <?php echo (form_error('about') != "") ? 'is-invalid' : '';?>" id="about" name="about"
-                        placeholder="About" value="<?php echo set_value('about', $dish['about']); ?>">
+                        placeholder="About" value="<?php echo set_value('about', $ctype['about']); ?>">
                     <span></span>
                     <?php echo form_error('about'); ?>
                 </div>
@@ -60,9 +60,9 @@
                     <?php echo(!empty($errorImageUpload))  ? 'is-invalid' : '';?>">
                     <?php echo (!empty($errorImageUpload)) ? $errorImageUpload : '';?>
 
-                    <?php if($dish['img'] != "" && file_exists('./public/uploads/dishesh/thumb/'.$dish['img'])) { ?>
+                    <?php if($ctype['img'] != "" && file_exists('./public/uploads/ctypeesh/thumb/'.$ctype['img'])) { ?>
 
-                    <img src="<?php echo base_url().'public/uploads/dishesh/thumb/'.$dish['img'];?>">
+                    <img src="<?php echo base_url().'public/uploads/ctypeesh/thumb/'.$ctype['img'];?>">
 
                     <?php } else { ?>
                     <img width="300" src="<?php echo base_url().'public/uploads/no-image.png'?>">
@@ -78,7 +78,7 @@
 <script>
 const form = document.getElementById('myForm');
 const resname = document.getElementById("resname");
-const dishname = document.getElementById("name");
+const ctypename = document.getElementById("name");
 const price = document.getElementById("price");
 const about = document.getElementById("about");
 const image = document.getElementById("image");
@@ -109,7 +109,7 @@ const successMsg = () => {
 
 const validate = () => {
     const resnameVal = resname.value.trim();
-    const dishnameVal = dishname.value.trim();
+    const ctypenameVal = ctypename.value.trim();
     const priceVal = price.value.trim();
     const aboutVal = about.value.trim();
     const imageVal = image.value.trim();
@@ -119,10 +119,10 @@ const validate = () => {
     } else {
         setSuccessMsg(resname);
     }
-    if (dishnameVal === "") {
-        setErrorMsg(dishname, 'dish name cannot be blank');
+    if (ctypenameVal === "") {
+        setErrorMsg(ctypename, 'court type cannot be blank');
     } else {
-        setSuccessMsg(dishname);
+        setSuccessMsg(ctypename);
     }
     if (priceVal === "") {
         setErrorMsg(price, 'price cannot be blank');

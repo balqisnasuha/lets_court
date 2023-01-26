@@ -44,10 +44,10 @@ INSERT INTO `admin` (`admin_id`, `username`, `password`, `email`, `date`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dishesh`
+-- Table structure for table `ctypeesh`
 --
 
-CREATE TABLE `dishesh` (
+CREATE TABLE `ctypeesh` (
   `d_id` int(11) NOT NULL,
   `r_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -57,10 +57,10 @@ CREATE TABLE `dishesh` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `dishesh`
+-- Dumping data for table `ctypeesh`
 --
 
-INSERT INTO `dishesh` (`d_id`, `r_id`, `name`, `about`, `price`, `img`) VALUES
+INSERT INTO `ctypeesh` (`d_id`, `r_id`, `name`, `about`, `price`, `img`) VALUES
 (1, 1, 'Grilled Cheese Sandwich', 'Grilled cheese sandwich or grilled cheese is a hot sandwich made with more varieties of cheese cooked on the grill long enough for the cheese to melt a little and the bread to get brown and a little crispy. Grill until lightly browned and flip over; conti', 6, 'igcsan.jpg'),
 (2, 1, 'Turkey Fajitas', 'Enjoy delicious Mexican food with this smoky BBQ turkey fajitas recipe from Giulia Restro to finish up turkey leftovers or just to make a tasty dinner! just give it a kick with picante sauce, peppers and onions, all wrapped up in a flour tortilla.', 9, 'turkey-fajitas.jpg'),
 (3, 3, 'Hot Dog', 'Whole cured, cooked sausage that is skinless or stuffed in a casing, that may be known as a frankfurter, frank, furter, wiener, red hot, vienna, bologna, garlic bologna, or knockwurst, and that may be served in a bun or roll', 4, 'hdoggg.jpg'),
@@ -227,9 +227,9 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`admin_id`);
 
 --
--- Indexes for table `dishesh`
+-- Indexes for table `ctypeesh`
 --
-ALTER TABLE `dishesh`
+ALTER TABLE `ctypeesh`
   ADD PRIMARY KEY (`d_id`);
 
 --
@@ -266,9 +266,9 @@ ALTER TABLE `user_orders`
 ALTER TABLE `admin`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT for table `dishesh`
+-- AUTO_INCREMENT for table `ctypeesh`
 --
-ALTER TABLE `dishesh`
+ALTER TABLE `ctypeesh`
   MODIFY `d_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT for table `courts`
