@@ -86,10 +86,10 @@ INSERT INTO `ctypeesh` (`d_id`, `r_id`, `name`, `about`, `price`, `img`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `courts`
+-- Table structure for table `court`
 --
 
-CREATE TABLE `courts` (
+CREATE TABLE `court` (
   `r_id` int(11) NOT NULL,
   `c_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -104,10 +104,10 @@ CREATE TABLE `courts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `courts`
+-- Dumping data for table `court`
 --
 
-INSERT INTO `courts` (`r_id`, `c_id`, `name`, `email`, `phone`, `url`, `o_hr`, `c_hr`, `o_days`, `address`, `img`) VALUES
+INSERT INTO `court` (`r_id`, `c_id`, `name`, `email`, `phone`, `url`, `o_hr`, `c_hr`, `o_days`, `address`, `img`) VALUES
 (1, 2, 'Giulia Restro', 'gr69stro@gmail.com', '1-555-555-5555', 'giuliarestroo.com', '8am', '7pm', 'mon-sat', '1259  Wood Street', 'grestro.jpg'),
 (2, 6, 'Vernick Restro', 'vernic@gmail.com', '1-567-567-8888', 'foodvernick.com', '10am', '7pm', '24hr-x7', '1812  Fleming Street', 'vrfnb.jpg'),
 (3, 6, 'Townsend', 'townsend@gmail.com', '1-333-222-7474', 'townsend.com', '8am', '8pm', 'mon-sat', '528  Veltri Drive', 'TOWNSEND.jpg'),
@@ -233,9 +233,9 @@ ALTER TABLE `ctypeesh`
   ADD PRIMARY KEY (`d_id`);
 
 --
--- Indexes for table `courts`
+-- Indexes for table `court`
 --
-ALTER TABLE `courts`
+ALTER TABLE `court`
   ADD PRIMARY KEY (`r_id`);
 
 --
@@ -271,9 +271,9 @@ ALTER TABLE `admin`
 ALTER TABLE `ctypeesh`
   MODIFY `d_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
--- AUTO_INCREMENT for table `courts`
+-- AUTO_INCREMENT for table `court`
 --
-ALTER TABLE `courts`
+ALTER TABLE `court`
   MODIFY `r_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `res_category`
